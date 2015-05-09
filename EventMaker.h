@@ -1,13 +1,17 @@
-#if !defined(EVENTMAKER)
+#ifndef EVENTMAKER
 #define EVENTMAKER
 
-#include "iostream"
-#include "Event.h"
-#include "map"
 #include "timing.h"
+#include "iostream"
+
+#include "Event.h"
+#include "Activite.h"
+#include "Tache.h"
+#include "Projet.h"
+
+
 using namespace std;
 using namespace TIME;
-
 
 /*!
 \class EventMaker
@@ -17,14 +21,14 @@ class EventMaker {
 public:
 	enum TYPE_EVENT
 	{
-		PROJET,
+		PROJ,
 		TACHE_S,
 		TACHE_C,
 		TACHE_P,
-		ACTIVITE
+		ACTIV
 	};
 	virtual Event* getEvent();//<!construction du bon Event
-	static EventMaker* create(TYPE_EVENT factory);//<! creation de l'élément
+	EventMaker* create(TYPE_EVENT factory);//<! creation de l'élément
 };
 /*!
 \class Activite_F
@@ -34,6 +38,7 @@ class Activite_F : public EventMaker {
 public:
 	Event* getEvent()
 	{
+		return new Activite();
 	}
 };
 /*!
@@ -44,6 +49,7 @@ class Projet_F : public EventMaker {
 public:
 	Event* getEvent()
 	{
+		return new Projet();
 	}
 };
 /*!
@@ -54,6 +60,7 @@ class TacheC_F : public EventMaker {
 public:
 	Event* getEvent()
 	{
+		return new TacheC();
 	}
 };
 /*!
@@ -64,6 +71,7 @@ class TacheP_F : public EventMaker {
 public:
 	Event* getEvent()
 	{
+		return new TacheP();
 	}
 };
 /*!
@@ -74,6 +82,7 @@ class TacheS_F : public EventMaker {
 public:
 	Event* getEvent()
 	{
+		return new TacheS();
 	}
 };
 

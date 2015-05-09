@@ -2,11 +2,11 @@
 
 EventMaker* EventMaker::create(TYPE_EVENT factory)
 {
-	if (factory == TYPE_EVENT::ACTIVITE)
+	if (factory == TYPE_EVENT::ACTIV)
 	{
 		return new Activite_F();
 	}
-	else if (factory == TYPE_EVENT::PROJET)
+	else if (factory == TYPE_EVENT::PROJ)
 	{
 		return new Projet_F();
 	}

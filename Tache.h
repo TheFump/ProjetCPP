@@ -1,10 +1,8 @@
-#if !defined(TACHE)
+#ifndef TACHE
 #define TACHE
 
-#include "iostream"
-#include "map"
-#include "timing.h"
 #include "Event.h"
+
 using namespace std;
 using namespace TIME;
 /*!
@@ -14,11 +12,48 @@ using namespace TIME;
 class Tache : public Event
 {
 public:
+
+	 void setDebut()
+	{
+
+	}
+	 void setFin()
+	 {
+
+	 }
+	 void setDuree()
+	 {
+
+	 }
+};
+
+class TacheC : public Tache
+{
+public:
 	string getType()//<! redéfinition pour renvoyer le bon type
 	{
-		return "Tache";
+		return "TacheC";
 	}
 };
+
+class TacheS : public Tache
+{
+public:
+	string getType()//<! redéfinition pour renvoyer le bon type
+	{
+		return "TacheC";
+	}
+};
+
+class TacheP : public TacheS
+{
+public:
+	string getType()//<! redéfinition pour renvoyer le bon type
+	{
+		return "TacheC";
+	}
+};
+
 
 
 #endif

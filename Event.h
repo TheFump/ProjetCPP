@@ -1,10 +1,10 @@
-#if !defined(EVENT)
+#ifndef EVENT
 #define EVENT
-#include "iostream"
-#include "map"
 #include "timing.h"
+#include "iostream"
 using namespace std;
 using namespace TIME;
+
 /*! 
 \class Event
 		\brief Classe Abstraite mère des éléments de l'agenda
@@ -34,14 +34,13 @@ public:
 	{
 		return duree;
 	}
-	virtual void setTitre()
+	virtual void setTitre()//<! permet de mettre a jour le titre;
 	{
-		string t;
-		titre = t;
+
 	}
-	virtual void setDebut() = 0;
-	virtual void setFin() = 0;
-	virtual void setDuree() = 0;
+	virtual void setDebut() = 0;//<! permet de mettre a jour la date de début;
+	virtual void setFin() = 0;//<! permet de mettre a jour la date de fin;
+	virtual void setDuree() = 0;//<! permet de mettre a jour la duree du projet;
 };
 
 #endif
